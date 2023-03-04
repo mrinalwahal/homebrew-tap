@@ -5,11 +5,11 @@
 class Envsecrets < Formula
   desc ""
   homepage "https://github.com/envsecrets/envsecrets"
-  version "0.0.4"
+  version "0.0.5"
 
   on_macos do
-    url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.4/envsecrets_0.0.4_darwin_all.tar.gz"
-    sha256 "ea3982c27c491a7b423cd28773f4d6b1d60e02649fd3ada3e7ce2f01a77a90eb"
+    url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.5/envsecrets_0.0.5_darwin_all.tar.gz"
+    sha256 "1ff79365749035f8de4cf46d20fa38bf3f7a4e32047e2b1fc49d5bf77cfacf2b"
 
     def install
       bin.install "envsecrets"
@@ -18,16 +18,16 @@ class Envsecrets < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.4/envsecrets_0.0.4_linux_amd64.tar.gz"
-      sha256 "614e0c445051a63872972d0a308a3be815fc632c35ca6276686dc48c2e0a7c39"
+      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.5/envsecrets_0.0.5_linux_amd64.tar.gz"
+      sha256 "da6a40a7d20deeeffdd36ae18af5be8bdd46393872c994d49860cfce3079910e"
 
       def install
         bin.install "envsecrets"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.4/envsecrets_0.0.4_linux_arm64.tar.gz"
-      sha256 "5b96b344e36df7befca88300713d67495a3ab5239f94b7f30c30d8b680cb6455"
+      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.5/envsecrets_0.0.5_linux_arm64.tar.gz"
+      sha256 "f4234db186819080adc4b78b9c92899e3a1d4133e031401643d7f0654d26cfbc"
 
       def install
         bin.install "envsecrets"
