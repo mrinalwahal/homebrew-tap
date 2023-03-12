@@ -5,11 +5,11 @@
 class Envsecrets < Formula
   desc "CLI-first management of your environment secrets."
   homepage "https://envsecrets.com"
-  version "0.0.10"
+  version "0.0.11"
 
   on_macos do
-    url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.10/envsecrets_0.0.10_darwin_all.tar.gz", using: GitDownloadStrategy
-    sha256 "6caf2c45b1fd42f631b14a4aa303840bd8f61e31832848ebf3b85c0cebdda290"
+    url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.11/envsecrets_0.0.11_darwin_all.tar.gz", using: CurlDownloadStrategy
+    sha256 "b4ba5731299c9c9a915f6e53ad5176f3fc0dc7033e6845cac757b5c0a0bbe71e"
 
     def install
       bin.install "envsecrets"
@@ -17,17 +17,17 @@ class Envsecrets < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.10/envsecrets_0.0.10_linux_arm64.tar.gz", using: GitDownloadStrategy
-      sha256 "8aef4464c339c0dde9640557babd8114fadf50b9f26e1c2dc4792e6cc26ab230"
+    if Hardware::CPU.intel?
+      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.11/envsecrets_0.0.11_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "0141d4f47a6a49f0a0e3a82bc1389b0f66ab26a8d2304f731b27ef02c7da0e8c"
 
       def install
         bin.install "envsecrets"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.10/envsecrets_0.0.10_linux_amd64.tar.gz", using: GitDownloadStrategy
-      sha256 "250396d09ab2058c307bda57409173b07c4626d049569e916f30a82a666b8122"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/envsecrets/envsecrets/releases/download/v0.0.11/envsecrets_0.0.11_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "3df995231746b02fb61c0a58c04adfc21fe7c49def4328f299f7d9cb8c00bc11"
 
       def install
         bin.install "envsecrets"
